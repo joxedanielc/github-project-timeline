@@ -6,23 +6,23 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
-import { TimelineDetail } from "@/utils";
+import { Commits } from "@/utils";
 
 interface Props {
-  timelineDetail: TimelineDetail;
+  timelineDetail: Commits;
 }
 
 const TimelineCardDetail: FunctionComponent<Props> = ({ timelineDetail }) => {
   return (
     <TimelineItem>
       <TimelineOppositeContent color="textSecondary">
-        {timelineDetail.time}
+        {timelineDetail.datetime.time}
       </TimelineOppositeContent>
       <TimelineSeparator>
         <TimelineDot />
         <TimelineConnector />
       </TimelineSeparator>
-      <TimelineContent>{timelineDetail.description}</TimelineContent>
+      <TimelineContent>{timelineDetail.message}</TimelineContent>
     </TimelineItem>
   );
 };

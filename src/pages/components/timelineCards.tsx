@@ -1,17 +1,17 @@
 import * as React from "react";
 import { FunctionComponent } from "react";
 import Timeline from "@mui/lab/Timeline";
-import TimelineCardDetail from "./TimelineCardDetail";
-import { TimelineDetail } from "@/utils";
+import TimelineCardDetail from "./timelineCardDetail";
+import { ProjectCommits } from "@/utils";
 
 interface Props {
-  timelineData: TimelineDetail[];
+  timelineData: ProjectCommits;
 }
 
 const TimelineCards: FunctionComponent<Props> = ({ timelineData }) => {
   return (
     <Timeline>
-      {timelineData?.map((timelineDetail, index) => {
+      {timelineData.commits.map((timelineDetail, index) => {
         return (
           <TimelineCardDetail key={index} timelineDetail={timelineDetail} />
         );
