@@ -18,8 +18,8 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className="container text-center">
-          <div className="row justify-content-md-center">
-            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2 mb-2">
+          <div className="row justify-content-md-center mt-4 mb-2">
+            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h1 className="text-primary">{projectname}</h1>
             </div>
           </div>
