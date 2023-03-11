@@ -13,7 +13,11 @@ const TimelineCards: FunctionComponent<Props> = ({ timelineData }) => {
     <Timeline>
       {timelineData.commits.map((timelineDetail, index) => {
         return (
-          <TimelineCardDetail key={index} timelineDetail={timelineDetail} />
+          <TimelineCardDetail
+            key={index}
+            timelineDetail={timelineDetail}
+            lastnode={timelineData.commits.length - 1 === index}
+          />
         );
       })}
     </Timeline>

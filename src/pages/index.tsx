@@ -19,8 +19,8 @@ export default function Home() {
       <main className={styles.main}>
         <div className="container text-center">
           <div className="row justify-content-md-center">
-            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <h1>{projectname}</h1>
+            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2 mb-2">
+              <h1 className="text-primary">{projectname}</h1>
             </div>
           </div>
           {response !== undefined ? (
@@ -36,7 +36,7 @@ export default function Home() {
                   </>
                 ) : (
                   <div className="alert alert-info" role="alert">
-                    {"The was a problem trying to retrieve the commits."}
+                    {"The was a problem trying to retrieved the commits."}
                   </div>
                 )}
               </div>
