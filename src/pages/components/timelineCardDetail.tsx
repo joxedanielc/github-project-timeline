@@ -8,27 +8,37 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import { Commits } from "@/utils";
 import { Typography } from "@mui/material";
+import CardDetail from "./cardDetail";
 
 interface Props {
   timelineDetail: Commits;
   lastnode: boolean;
+  username: string;
+  reponame: string;
+  index: number;
 }
 
 const TimelineCardDetail: FunctionComponent<Props> = ({
   timelineDetail,
   lastnode,
+  username,
+  reponame,
+  index,
 }) => {
   return (
     <TimelineItem>
-      <TimelineOppositeContent color="textSecondary">
-        {timelineDetail.datetime.time}
-        <Typography>{`by ${timelineDetail.author}`}</Typography>
-      </TimelineOppositeContent>
       <TimelineSeparator>
         <TimelineDot variant="outlined" color="secondary" />
         {!lastnode && <TimelineConnector sx={{ bgcolor: "secondary.main" }} />}
       </TimelineSeparator>
-      <TimelineContent>{timelineDetail.message}</TimelineContent>
+      <TimelineContent>
+        <CardDetail
+          timelineDetail={timelineDetail}
+          username={username}
+          reponame={reponame}
+          index={index}
+        />
+      </TimelineContent>
     </TimelineItem>
   );
 };

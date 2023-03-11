@@ -9,7 +9,8 @@ export interface ProjectCommits {
 }
 
 export interface Commits {
-  id: string;
+  node_id: string;
+  sha: string;
   message: string;
   author: string;
   datetime: {
