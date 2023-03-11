@@ -18,7 +18,3 @@ export interface Commits {
     time: string;
   };
 }
-
-export const normalize = (data: any): ProjectCommits => {
-  return data;
-};
