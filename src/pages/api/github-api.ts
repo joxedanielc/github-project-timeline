@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 import { useEffect, useState } from "react";
-import { ProjectCommits, normalize } from "@/utils";
+import { ProjectCommits } from "@/utils";
 
 export const baseUrl = "http://localhost:1337/timeline?";
 
@@ -13,7 +13,7 @@ export const GetCommits = (username: string, repname: string) => {
     await axios
       .get(`${baseUrl}username=${username}&reponame=${repname}`)
       .then(function (data) {
-        setResponse(normalize(data.data));
+        setResponse(data.data as ProjectCommits);
         setIsLoading(false);
       })
       .catch(function (err) {
