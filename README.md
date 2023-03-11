@@ -1,38 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Github Project Timeline
+This project is a small responsive web application that consumes an API created in NodeJs and SailsJS to render all the commits done in an especific project.
 
-## Getting Started
+## Features  
 
-First, run the development server:
+- Load all the commits related done in `github-timeline-api`
+- E2E Tests
 
-```bash
+# Table of contents  
+1. [Tech Stack](https://github.com/joxedanielc/github-project-timeline#tech-stack)  
+2. Code Explanation
+    1. [API](https://github.com/joxedanielc/github-project-timeline#api)
+    2. [Utils](https://github.com/joxedanielc/github-project-timeline#utils)
+4. [Run Locally](https://github.com/joxedanielc/github-project-timeline#run-locally)  
+5. [Feedback](https://github.com/joxedanielc/github-project-timeline#feedback)
+6. [License](https://github.com/joxedanielc/github-project-timeline#license)
+
+## Tech Stack  
+
+**Client:** React, Nextjs, Typescript, Boostrap, MUI
+
+## Code Explanation  
+
+### API
+
+The file `github-api.ts` contains the logic to both call the url provided concatenated with the username and repository name and also normalize the data to an interface to use the response in order to render the data.
+
+### Utils
+
+The file `utils.ts` contains the interfaces to create the expected objects with its properties, and the functions that handle the set of data.
+
+## Run Locally  
+
+### Important: 
+
+Run the project [github-timeline-api](https://github.com/joxedanielc/github-timeline-api) first.
+
+Clone the project  
+
+~~~bash  
+  git clone https://github.com/joxedanielc/github-project-timeline.git
+~~~
+
+Go to the project directory  
+
+~~~bash  
+cd github-project-timeline
+~~~
+
+Install dependencies  
+
+~~~bash  
+npm install
+~~~
+
+Start the server  
+
+~~~bash  
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+~~~
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To run e2e test (no need to start the server before)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+~~~bash  
+npx playwright test
+~~~
+or if you'd like to see the test on the browser:
+~~~bash  
+npx playwright test --debug
+~~~
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Feedback  
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+If you have any feedback, please leave a comment.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## License  
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[MIT](https://choosealicense.com/licenses/mit/)
