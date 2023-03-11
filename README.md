@@ -59,7 +59,7 @@ Start the server
 npm run dev
 ~~~
 
-To run e2e test (no need to start the server before)
+To run e2e test (you NEED to start the backend before)
 
 ~~~bash  
 npx playwright test
